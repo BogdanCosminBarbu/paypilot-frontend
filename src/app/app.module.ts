@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
+import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
+import { BillOverviewService } from './bill-overview.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     ScheduledPaymentsComponent,
     NotificationComponent,
     TrackPaymentsComponent,
-    ManageBillComponent
+    ManageBillComponent,
+    BillOverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     NotificationService,
-    HttpClient
+    HttpClient,
+    BillOverviewService
   ],
   bootstrap: [AppComponent]
 })
