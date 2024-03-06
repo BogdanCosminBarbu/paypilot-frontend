@@ -25,6 +25,7 @@ import { BillInternetComponent } from './manage-bill/bill-overview/bill-internet
 import { BillRentComponent } from './manage-bill/bill-overview/bill-rent/bill-rent.component';
 import { BillRetirementComponent } from './manage-bill/bill-overview/bill-retirement/bill-retirement.component';
 import { BillCellphoneComponent } from './manage-bill/bill-overview/bill-cellphone/bill-cellphone.component';
+import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { BillCellphoneComponent } from './manage-bill/bill-overview/bill-cellpho
     BillRentComponent,
     BillRetirementComponent,
     BillCellphoneComponent
+    ReminderSettingsComponent
   ],
   imports: [
     BrowserModule,

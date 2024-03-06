@@ -14,6 +14,8 @@ import { BillGroceriesComponent } from './manage-bill/bill-overview/bill-groceri
 import { BillInternetComponent } from './manage-bill/bill-overview/bill-internet/bill-internet.component';
 import { BillRetirementComponent } from './manage-bill/bill-overview/bill-retirement/bill-retirement.component';
 import { BillCellphoneComponent } from './manage-bill/bill-overview/bill-cellphone/bill-cellphone.component';
+import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
+
 
 const routes: Routes = [
   {
@@ -49,6 +51,7 @@ const routes: Routes = [
     component : AddBillComponent
   },
   {
+
     path:'debt-payments',
     component : BillDebtComponent
   },
@@ -72,6 +75,11 @@ const routes: Routes = [
     path:'cell-phone-charges',
     component : BillCellphoneComponent
   },
+
+    path:'reminder-settings',
+    component : ReminderSettingsComponent
+  }
+
 ];
 
 @NgModule({
