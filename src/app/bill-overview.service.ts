@@ -12,7 +12,7 @@ export class BillOverviewService {
 
   private url: string = "http://localhost:8082/bill"
 
-  public getOverviews(bill: BillOverview): Observable<BillOverview[]> {
-    return this.httpClient.post<BillOverview[]>(`${this.url}`, bill);
+  public getOverviews(bill: BillOverview): Observable<Map<string, number>> {
+    return this.httpClient.post<Map<string, number>>(`${this.url}`, bill);
   }
 }

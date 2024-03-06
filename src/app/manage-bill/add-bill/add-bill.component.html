@@ -1,1 +1,51 @@
-<p>add bill works</p>
+<div class="body-all">
+    <div class="form-container">
+        <h2>Add New Bill</h2>
+        <form>
+            <div class="form-field">
+                <label for="bill-name">Bill Name:</label>
+                <input type="text" id="bill-name" name="bill-name" required>
+            </div>
+            <div class="form-field">
+                <label for="bill-category">Bill Category:</label>
+                <select id="bill-category" name="bill-category" required>
+                    <option value="HOUSE_RENT">HOUSE_RENT</option>
+                    <option value="GROCERIES">GROCERIES</option>
+                    <option value="GROCERIES">DEBT_PAYMENTS</option>
+                    <option value="GROCERIES">INTERNET_CHARGES</option>
+                    <option value="GROCERIES">RETIREMENT_CHARGES</option>
+                    <option value="GROCERIES">CELL_PHONE_CHARGES</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="bill-date">Bill Date:</label>
+                <input type="date" id="bill-date" name="bill-date" required>
+            </div>
+            <div class="form-field">
+                <label for="due-date">Due Date:</label>
+                <input type="date" id="due-date" name="due-date" required>
+            </div>
+            <div class="form-field">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-field">
+                <label for="reminder-frequency">Reminder Frequency:</label>
+                <select id="reminder-frequency" name="reminder-frequency" required>
+                    <option value="DAILY">DAILY</option>
+                    <option value="WEEKLY">WEEKLY</option>
+                    <option value="BIMONTHLY">BIMONTHLY</option>
+                    <option value="MONTHLY">MONTHLY</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="notes">Notes (if any):</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="save">Save</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
