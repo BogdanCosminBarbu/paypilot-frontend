@@ -16,9 +16,15 @@ import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
-import { BillOverviewService } from './bill-overview.service';
+import { BillOverviewService } from './manage-bill/service/bill-overview.service';
 import { RouterModule } from '@angular/router';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
+import { BillDebtComponent } from './manage-bill/bill-overview/bill-debt/bill-debt.component';
+import { BillGroceriesComponent } from './manage-bill/bill-overview/bill-groceries/bill-groceries.component';
+import { BillInternetComponent } from './manage-bill/bill-overview/bill-internet/bill-internet.component';
+import { BillRentComponent } from './manage-bill/bill-overview/bill-rent/bill-rent.component';
+import { BillRetirementComponent } from './manage-bill/bill-overview/bill-retirement/bill-retirement.component';
+import { BillCellphoneComponent } from './manage-bill/bill-overview/bill-cellphone/bill-cellphone.component';
 import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
 
 @NgModule({
@@ -31,6 +37,12 @@ import { ReminderSettingsComponent } from './manage-bill/reminder-settings/remin
     TrackPaymentsComponent,
     ManageBillComponent,
     BillOverviewComponent,
+    BillDebtComponent,
+    BillGroceriesComponent,
+    BillInternetComponent,
+    BillRentComponent,
+    BillRetirementComponent,
+    BillCellphoneComponent
     ReminderSettingsComponent
   ],
   imports: [

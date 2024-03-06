@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BillOverview } from '../../BillOverview';
-import { BillOverviewService } from '../../bill-overview.service';
-import dayjs from 'dayjs';
+import { BillOverviewService } from '../service/bill-overview.service';
+import { BillCategory } from '../../constants/bill-category';
 
 
 @Component({
@@ -19,6 +19,7 @@ export class BillOverviewComponent {
   dateFrom: Date | undefined;
   dateTo: Date | undefined;
   billStatus: string | undefined;
+  categories: BillCategory[] = Object.values(BillCategory);
 
   ngOnInit(): void {
     // Call the backend service to fetch bill overview
@@ -56,10 +57,15 @@ export class BillOverviewComponent {
     this.service.getOverviews(this.billOverview).subscribe(
       (data: Map<string, number>) => {
         this.billOverviewMap = data;
+        console.log(this.billOverview);
       },
       error => {
         console.error('Error fetching bill overview:', error);
       }
     );
+  }
+
+  generateRouterLink(value: string): string {
+    return `/${value.toLowerCase().replace(/_/g, '-')}`;
   }
 }
