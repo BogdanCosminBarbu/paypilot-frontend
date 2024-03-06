@@ -6,22 +6,19 @@ import { ManageBillComponent } from './manage-bill/manage-bill.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payments.component';
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
-import { HomeComponent } from './home/home.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path : 'login',component : LoginComponent},
   {path : 'register',component : RegisterComponent},
   {path : 'manage-bills',component : ManageBillComponent},
-  {path : 'notification',component : NotificationComponent},
+  {path : 'notifications',component : NotificationComponent},
   {path : 'schedule-payments',component : ScheduledPaymentsComponent},
-  {path : 'track-payments',component : TrackPaymentsComponent},
-  {path : 'home', component : HomeComponent},
-  {path : '' , redirectTo : 'home', pathMatch: 'full'}
-
+  {path : 'track-payments',component : TrackPaymentsComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes , {useHash:true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
