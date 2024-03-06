@@ -19,6 +19,7 @@ import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview
 import { BillOverviewService } from './bill-overview.service';
 import { RouterModule } from '@angular/router';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
+import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
     NotificationComponent,
     TrackPaymentsComponent,
     ManageBillComponent,
-    BillOverviewComponent
+    BillOverviewComponent,
+    ReminderSettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payme
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
+import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path:'add-bill',
     component : AddBillComponent
+  },
+  {
+    path:'reminder-settings',
+    component : ReminderSettingsComponent
   }
 ];
 
