@@ -2,7 +2,9 @@
 table {
     margin: 0 auto; /* Set left and right margin to 'auto' */
 }
- 
+
+h1{ text-align: center;}
+
 /* Style the table */
 table {
     border-collapse: collapse; /* Collapse border spacing */
