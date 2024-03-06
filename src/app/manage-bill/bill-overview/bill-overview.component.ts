@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BillOverview } from '../../BillOverview';
-import { BillOverviewService } from '../service/bill-overview.service';
+import { BillOverviewService } from './service/bill-overview.service';
 import { BillCategory } from '../../constants/bill-category';
 
 

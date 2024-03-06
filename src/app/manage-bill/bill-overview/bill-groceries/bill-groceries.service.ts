@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BillGroceries } from './model/bill-groceries.model';
+import { Bill } from '../../model/bill.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class BillGroceriesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getAll(): Observable<BillGroceries[]> {
-    return this.httpClient.get<BillGroceries[]>(this.url);
+  public getAll(): Observable<Bill[]> {
+    return this.httpClient.get<Bill[]>(this.url);
   }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BillDebt } from './model/bill-debt.model';
 import { BillDebtService } from './bill-debt.service';
 import { Router } from '@angular/router';
+import { Bill } from '../../model/bill.model';
 
 @Component({
   selector: 'app-bill-debt',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./bill-debt.component.css']
 })
 export class BillDebtComponent implements OnInit {
-  bills: BillDebt[] = [];
+  bills: Bill[] = [];
 
   constructor(private billDebtService: BillDebtService, private router: Router) {}
 

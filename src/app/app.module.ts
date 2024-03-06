@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
-import { BillOverviewService } from './manage-bill/service/bill-overview.service';
+import { BillOverviewService } from './manage-bill/bill-overview/service/bill-overview.service';
 import { RouterModule } from '@angular/router';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
 import { BillOverdueUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue-upcoming.component';

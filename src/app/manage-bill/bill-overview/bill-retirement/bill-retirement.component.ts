@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { BillRetirementService } from './bill-retirement.service';
 import { BillRetirement } from './model/bill-retirement.model';
 import { Router } from '@angular/router';
+import { Bill } from '../../model/bill.model';
 
 @Component({
   selector: 'app-bill-retirement',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./bill-retirement.component.css']
 })
 export class BillRetirementComponent implements OnInit {
-  bills: BillRetirement[] = [];
+  bills: Bill[] = [];
 
   constructor(private billRetirementService : BillRetirementService, private router: Router) {}
 
