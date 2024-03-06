@@ -1,0 +1,32 @@
+/* Centering the table */
+table {
+    margin: 0 auto; /* Set left and right margin to 'auto' */
+}
+ 
+/* Style the table */
+table {
+    border-collapse: collapse; /* Collapse border spacing */
+    width: 80%; /* Adjust width of the table */
+}
+ 
+/* Style table headers */
+th, td {
+    padding: 8px; /* Add padding to table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Add bottom border to cells */
+}
+ 
+th {
+    background-color: #4CAF50; /* Set green background color for table headers */
+    color: white; /* Set text color to white */
+    font-weight: bold; /* Make headers bold */
+}
+ 
+/* Style alternate rows with light green background */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Set light green background color for even rows */
+}
+ 
+tr:nth-child(odd) {
+    background-color: #ffffff; /* Set white background color for odd rows */
+}

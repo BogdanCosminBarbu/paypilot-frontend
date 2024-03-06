@@ -1,1 +1,17 @@
-<p>notification works!</p>
+<h1>Notifications List</h1>
+<table>
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Bill</th>
+    <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let notification of notifications">
+    <td>{{ notification.id }}</td>
+    <td>{{ notification.bill }}</td>
+    <td>{{ notification.message }}</td>
+    </tr>
+    </tbody>
+    </table>
