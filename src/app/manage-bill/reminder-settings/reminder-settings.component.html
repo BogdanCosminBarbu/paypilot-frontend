@@ -1,0 +1,51 @@
+<div class="body-all">
+    <div class="form-container">
+        <h2>Reminder Settings</h2>
+        <form>
+            <div class="form-field">
+                <label for="bill-category">Bill Category</label>
+                <select id="bill-category" name="bill-category" required>
+                    <option value="HOUSE_RENT">HOUSE_RENT</option>
+                    <option value="GROCERIES">GROCERIES</option>
+                    <option value="GROCERIES">DEBT_PAYMENTS</option>
+                    <option value="GROCERIES">INTERNET_CHARGES</option>
+                    <option value="GROCERIES">RETIREMENT_CHARGES</option>
+                    <option value="GROCERIES">CELL_PHONE_CHARGES</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="bill-name">Bill Name</label>
+                <input type="text" id="bill-name" name="bill-name" required>
+            </div>
+            <hr>
+            <div class="form-field">
+                <label for="reminder-frequency">Reminder Frequency</label>
+                <select id="reminder-frequency" name="reminder-frequency" required>
+                    <option value="DAILY">DAILY</option>
+                    <option value="WEEKLY">WEEKLY</option>
+                    <option value="BIMONTHLY">BIMONTHLY</option>
+                    <option value="MONTHLY">MONTHLY</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="reminder-date">Reminder Starting Date</label>
+                <input type="date" id="reminder-date" name="reminder-date" required>
+            </div>
+            <div class="form-field">
+                <label for="message">Message Customization</label>
+                <input type="text" id="message" name="message" placeholder="Bill payment due" required>
+            </div>
+            <div class="form-field">
+                <label for="notifications-preferences">Notification Preeferences</label>
+                <select id="notifications-preferences" name="notifications-preferences" required>
+                    <option value="EMAIL">EMAIL</option>
+                    <option value="SMS">SMS</option>
+                </select>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="save">Save</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
