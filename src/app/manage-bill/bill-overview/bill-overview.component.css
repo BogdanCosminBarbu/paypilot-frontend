@@ -82,3 +82,16 @@
   background-color: #f2f2f2;
   /* Light gray background */
 }
+
+.centered-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.overview-button {
+  margin-left: auto;
+}

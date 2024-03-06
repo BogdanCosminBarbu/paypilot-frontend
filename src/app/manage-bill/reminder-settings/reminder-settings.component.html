@@ -1,22 +1,25 @@
 <div class="body-all">
     <div class="form-container">
-        <h2>Reminder Settings</h2>
+        <h2 style="text-align: center;">Reminder Settings</h2>
         <form>
             <div class="form-field">
                 <label for="bill-category">Bill Category</label>
-                <select id="bill-category" name="bill-category" required>
+                <select id="bill-category" name="bill-category" [(ngModel)]="billCategory" onchange="loadBills()" required>
                     <option value="HOUSE_RENT">HOUSE_RENT</option>
                     <option value="GROCERIES">GROCERIES</option>
-                    <option value="GROCERIES">DEBT_PAYMENTS</option>
-                    <option value="GROCERIES">INTERNET_CHARGES</option>
-                    <option value="GROCERIES">RETIREMENT_CHARGES</option>
-                    <option value="GROCERIES">CELL_PHONE_CHARGES</option>
+                    <option value="DEBT_PAYMENTS">DEBT_PAYMENTS</option>
+                    <option value="INTERNET_CHARGES">INTERNET_CHARGES</option>
+                    <option value="RETIREMENT_CHARGES">RETIREMENT_CHARGES</option>
+                    <option value="CELL_PHONE_CHARGES">CELL_PHONE_CHARGES</option>
                 </select>
             </div>
             <div class="form-field">
-                <label for="bill-name">Bill Name</label>
-                <input type="text" id="bill-name" name="bill-name" required>
-            </div>
+                <label for="bill-category">Bill Name:</label>
+                <select id="bill-category" name="bill-name" [(ngModel)]="bill">
+                  <option >Select</option>
+                  <option *ngFor="let bill of bills" [value]="bill">{{ bill.billName }}</option>
+                </select>
+              </div>
             <hr>
             <div class="form-field">
                 <label for="reminder-frequency">Reminder Frequency</label>

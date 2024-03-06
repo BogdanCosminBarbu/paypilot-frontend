@@ -30,9 +30,15 @@
   <div class="table-row header">
     <div class="table-cell">Category</div>
     <div class="table-cell">Count</div>
+    <div class="table-cell"></div>
   </div>
   <div class="table-row" *ngFor="let entry of billOverviewMap | keyvalue">
-    <div [routerLink]="generateRouterLink(entry.key)" class="table-cell">{{ entry.key }}</div>
+    <div class="table-cell">{{ entry.key }}</div>
     <div class="table-cell">{{ entry.value }}</div>
+    <div class="table-cell centered">
+      <div class="centered-horizontal">
+        <div *ngIf="entry.value > 0" [routerLink]="generateRouterLink(entry.key)">Overview</div>
+      </div>
+    </div>
   </div>
 </div>

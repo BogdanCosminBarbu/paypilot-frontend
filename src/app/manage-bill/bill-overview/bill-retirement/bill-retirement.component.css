@@ -1,0 +1,48 @@
+.table {
+ display: table;
+ width: 100%;
+ border-collapse: collapse;
+}
+
+.table-row {
+ display: table-row;
+}
+
+.header {
+ font-weight: bold;
+}
+
+.table-cell {
+ display: table-cell;
+ padding: 8px;
+ border: 1px solid #ddd;
+}
+
+/* Style for the overview button */
+.overview-button {
+ display: flex;
+ justify-content: flex-end;
+}
+
+/* Style to move count to the left */
+.count-cell {
+ text-align: left;
+}
+
+.back-button {
+ background-color: #4CAF50;
+ border: none;
+ color: white;
+ padding: 10px 20px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+ border-radius: 8px;
+}
+
+.back-button:hover {
+ background-color: #45a049;
+}

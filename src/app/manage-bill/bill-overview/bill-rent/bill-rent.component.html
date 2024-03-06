@@ -1,1 +1,26 @@
-<p>bill-rent works!</p>
+<button class="back-button" (click)="goBackToBillOverview()">Back to Bill Overview</button>
+<div class="table">
+ <div class="table-row header">
+  <div class="table-cell">Bill ID</div>
+  <div class="table-cell">Bill Name</div>
+  <div class="table-cell">Category</div>
+  <div class="table-cell">SL No</div>
+  <div class="table-cell">Month</div>
+  <div class="table-cell">From</div>
+  <div class="table-cell">To</div>
+  <div class="table-cell">Amount</div>
+  <div class="table-cell">Due Date</div>
+  <div class="table-cell">Reminder Settings</div>
+ </div>
+ <div class="table-row" *ngFor="let bill of bills">
+  <div class="table-cell">{{ bill.billId }}</div>
+  <div class="table-cell">{{ bill.billName }}</div>
+  <div class="table-cell">{{ bill.billCategory }}</div>
+  <div class="table-cell">{{ bill.slNo }}</div>
+  <div class="table-cell">{{ bill.month }}</div>
+  <div class="table-cell">{{ bill.billDateFrom }}</div>
+  <div class="table-cell">{{ bill.billDateTo }}</div>
+  <div class="table-cell">{{ bill.amount }}</div>
+  <div class="table-cell">{{ bill.dueDate }}</div>
+ </div>
+</div>
