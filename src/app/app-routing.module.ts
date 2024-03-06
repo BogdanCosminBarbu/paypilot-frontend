@@ -6,6 +6,7 @@ import { ManageBillComponent } from './manage-bill/manage-bill.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payments.component';
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
+import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path : 'track-payments',
     component : TrackPaymentsComponent
+  },
+  {
+    path : 'bill-overview',
+    component : BillOverviewComponent
   }
 ];
 

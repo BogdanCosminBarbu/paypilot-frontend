@@ -17,6 +17,10 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
+import { BillOverviewService } from './bill-overview.service';
+import { RouterModule } from '@angular/router';
+import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ScheduledPaymentsComponent,
     NotificationComponent,
     TrackPaymentsComponent,
-    ManageBillComponent
+    ManageBillComponent,
+    BillOverviewComponent
   ],
   imports: [
     BrowserModule,
@@ -35,11 +40,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterTestingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'manage-bills',
+        component: ManageBillComponent
+      },
+      {
+        path: 'manage-bills/add-bill',
+        component: AddBillComponent
+      }
+    ])
   ],
   providers: [
     NotificationService,
-    HttpClient
+    HttpClient,
+    BillOverviewService
   ],
   bootstrap: [AppComponent]
 })

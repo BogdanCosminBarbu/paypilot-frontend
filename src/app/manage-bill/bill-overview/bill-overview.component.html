@@ -1,0 +1,37 @@
+{{billOverviewForm.value | json}}
+<form class="form-container" #billOverviewForm = "ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="bill-category">Bill Category:</label>
+      <select id="bill-category" name="bill-category" [(ngModel)]="billOverview.billCategory">
+        <option value="ALL">ALL</option>
+        <option value="DEBT_PAYMENTS">DEBT PAYMENTS</option>
+        <option value="HOUSE_RENT">HOUSE RENT</option>
+        <option value="GROCERIES">GROCERIES</option>
+        <option value="INTERNET_CHARGES">INTERNET CHARGES</option>
+        <option value="RETIREMENT_CHARGES">RETIREMENT CHARGES</option>
+        <option value="CELL_PHONE_CHARGES">CELL PHONE CHARGES</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="bill-date-from">Bill Date From:</label>
+      <input type="date" id="bill-date-from" name="dateFrom" [(ngModel)]="billOverview.billDateFrom">
+    </div>
+    <div class="form-field">
+      <label for="bill-date-to">Bill Date To:</label>
+      <input type="date" id="bill-date-to" name="dateTo" [(ngModel)]="billOverview.billDateTo">
+    </div>
+    <div class="form-field">
+      <label for="bill-status">Bill Status:</label>
+      <select id="bill-status" name="bill-status" [(ngModel)]="billOverview.billStatus">
+        <option value="UPCOMING">UPCOMING</option>
+        <option value="PENDING">PENDING</option>
+        <option value="PAID">PAID</option>
+      </select>
+    </div>
+    <div style="text-align: center;">
+        <button type="submit">Submit</button>
+    </div>
+  </form>
+    <div style="text-align: center;">
+        {{billOverview | json}}
+    </div>
