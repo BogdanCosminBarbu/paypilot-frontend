@@ -56,7 +56,7 @@ import { TrackPaymentsOverviewService } from './track-payments/track-payments-ov
     BillRentComponent,
     BillRetirementComponent,
     BillCellphoneComponent,
-    ReminderSettingsComponent
+    ReminderSettingsComponent,
     BillUpcomingComponent,
     AddBillComponent,
     TrackPaymentsHistoryComponent,
