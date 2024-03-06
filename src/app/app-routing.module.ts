@@ -6,32 +6,15 @@ import { ManageBillComponent } from './manage-bill/manage-bill.component';
 import { NotificationComponent } from './notification/notification.component';
 import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payments.component';
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  {
-    path : 'login',
-    component : LoginComponent
-  },
-  {
-    path : 'register',
-    component : RegisterComponent
-  },
-  {
-    path : 'manage-bill',
-    component : ManageBillComponent
-  },
-  {
-    path : 'notification',
-    component : NotificationComponent
-  },
-  {
-    path : 'schedule-payments',
-    component : ScheduledPaymentsComponent
-  },
-  {
-    path : 'track-payments',
-    component : TrackPaymentsComponent
-  }
+  {path : 'login',component : LoginComponent},
+  {path : 'register',component : RegisterComponent},
+  {path : 'manage-bills',component : ManageBillComponent},
+  {path : 'notifications',component : NotificationComponent},
+  {path : 'schedule-payments',component : ScheduledPaymentsComponent},
+  {path : 'track-payments',component : TrackPaymentsComponent}
 ];
 
 @NgModule({

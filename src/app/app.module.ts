@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     ScheduledPaymentsComponent,
     NotificationComponent,
     TrackPaymentsComponent,
-    ManageBillComponent
+    ManageBillComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,17 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     CommonModule,
     RouterTestingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'manage-bills',
+        component: ManageBillComponent
+      },
+      {
+        path: 'manage-bills/add-bill',
+        component: AddBillComponent
+      }
+    ])
   ],
   providers: [
     NotificationService,
