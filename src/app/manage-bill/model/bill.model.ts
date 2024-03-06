@@ -18,5 +18,4 @@ export class Bill {
   billDateTo: Date | undefined;
   billLoanType: string | undefined;
   user: string | null | undefined; // add correct type
-  notificationList: string | undefined; // add correct type
 }

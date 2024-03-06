@@ -1,1 +1,27 @@
-<p>bill-retirement works!</p>
+<!-- bill-retirement.component.html -->
+<div class="table">
+ <div class="table-row header">
+  <div class="table-cell">Bill ID</div>
+  <div class="table-cell">Bill Name</div>
+  <div class="table-cell">Category</div>
+  <div class="table-cell">Due Date</div>
+  <div class="table-cell">Notes</div>
+  <div class="table-cell">Is Recurrent</div>
+  <div class="table-cell">SL No</div>
+  <div class="table-cell">Month</div>
+  <div class="table-cell">Amount</div>
+  <div class="table-cell">Reminder Settings</div>
+ </div>
+ <div class="table-row" *ngFor="let bill of bills">
+  <div class="table-cell">{{ bill.billId }}</div>
+  <div class="table-cell">{{ bill.billName }}</div>
+  <div class="table-cell">{{ bill.billCategory }}</div>
+  <div class="table-cell">{{ bill.dueDate }}</div>
+  <div class="table-cell">{{ bill.notes }}</div>
+  <div class="table-cell">{{ bill.isRecurrent }}</div>
+  <div class="table-cell">{{ bill.slNo }}</div>
+  <div class="table-cell">{{ bill.month }}</div>
+  <div class="table-cell">{{ bill.amount }}</div>
+  <div class="table-cell">{{ bill.reminderSettings }}</div>
+ </div>
+</div>

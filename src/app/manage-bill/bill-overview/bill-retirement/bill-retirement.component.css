@@ -1,0 +1,30 @@
+.table {
+ display: table;
+ width: 100%;
+ border-collapse: collapse;
+}
+
+.table-row {
+ display: table-row;
+}
+
+.header {
+ font-weight: bold;
+}
+
+.table-cell {
+ display: table-cell;
+ padding: 8px;
+ border: 1px solid #ddd;
+}
+
+/* Style for the overview button */
+.overview-button {
+ display: flex;
+ justify-content: flex-end;
+}
+
+/* Style to move count to the left */
+.count-cell {
+ text-align: left;
+}

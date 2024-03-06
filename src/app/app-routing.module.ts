@@ -79,7 +79,6 @@ const routes: Routes = [
     path:'reminder-settings',
     component : ReminderSettingsComponent
   }
-
 ];
 
 @NgModule({

@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+// bill-retirement.component.ts
+import { Component, OnInit } from '@angular/core';
+
+import { BillRetirementService } from './bill-retirement.service';
+import { BillRetirement } from './model/bill-retirement.model';
 
 @Component({
   selector: 'app-bill-retirement',
   templateUrl: './bill-retirement.component.html',
-  styleUrl: './bill-retirement.component.css'
+  styleUrls: ['./bill-retirement.component.css']
 })
-export class BillRetirementComponent {
+export class BillRetirementComponent implements OnInit {
+  bills: BillRetirement[] = [];
 
+  constructor(private billRetirementService : BillRetirementService) {}
+
+  ngOnInit(): void {
+    this.billRetirementService.getAll().subscribe(
+      data => this.bills = data 
+    );
+  }
 }
