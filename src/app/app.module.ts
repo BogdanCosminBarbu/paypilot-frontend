@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -21,6 +20,13 @@ import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
 import { BillOverdueUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue-upcoming.component';
 import { BillOverdueComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue/bill-overdue.component';
 import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-upcoming/bill-upcoming.component';
+import { BillDebtComponent } from './manage-bill/bill-overview/bill-debt/bill-debt.component';
+import { BillGroceriesComponent } from './manage-bill/bill-overview/bill-groceries/bill-groceries.component';
+import { BillInternetComponent } from './manage-bill/bill-overview/bill-internet/bill-internet.component';
+import { BillRentComponent } from './manage-bill/bill-overview/bill-rent/bill-rent.component';
+import { BillRetirementComponent } from './manage-bill/bill-overview/bill-retirement/bill-retirement.component';
+import { BillCellphoneComponent } from './manage-bill/bill-overview/bill-cellphone/bill-cellphone.component';
+import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
 import { AddBillService } from './manage-bill/service/add-bill.service';
 import { ShareServiceService } from './manage-bill/service/share-service.service';
 
@@ -36,6 +42,14 @@ import { ShareServiceService } from './manage-bill/service/share-service.service
     BillOverviewComponent,
     BillOverdueUpcomingComponent,
     BillOverdueComponent,
+    BillUpcomingComponent,
+    BillDebtComponent,
+    BillGroceriesComponent,
+    BillInternetComponent,
+    BillRentComponent,
+    BillRetirementComponent,
+    BillCellphoneComponent,
+    ReminderSettingsComponent
     BillUpcomingComponent,
     AddBillComponent
   ],
