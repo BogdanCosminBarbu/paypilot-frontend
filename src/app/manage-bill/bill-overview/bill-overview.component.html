@@ -1,28 +1,22 @@
-{{billOverviewForm.value | json}}
 <form class="form-container" #billOverviewForm = "ngForm" (ngSubmit)="onSubmit()">
     <div class="form-field">
       <label for="bill-category">Bill Category:</label>
-      <select id="bill-category" name="bill-category" [(ngModel)]="billOverview.billCategory">
+      <select id="bill-category" name="bill-category" [(ngModel)]="billCategory">
         <option value="ALL">ALL</option>
-        <option value="DEBT_PAYMENTS">DEBT PAYMENTS</option>
-        <option value="HOUSE_RENT">HOUSE RENT</option>
-        <option value="GROCERIES">GROCERIES</option>
-        <option value="INTERNET_CHARGES">INTERNET CHARGES</option>
-        <option value="RETIREMENT_CHARGES">RETIREMENT CHARGES</option>
-        <option value="CELL_PHONE_CHARGES">CELL PHONE CHARGES</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
       </select>
     </div>
     <div class="form-field">
       <label for="bill-date-from">Bill Date From:</label>
-      <input type="date" id="bill-date-from" name="dateFrom" [(ngModel)]="billOverview.billDateFrom">
+      <input type="date" id="bill-date-from" name="dateFrom" [(ngModel)]="dateFrom">
     </div>
     <div class="form-field">
       <label for="bill-date-to">Bill Date To:</label>
-      <input type="date" id="bill-date-to" name="dateTo" [(ngModel)]="billOverview.billDateTo">
+      <input type="date" id="bill-date-to" name="dateTo" [(ngModel)]="dateTo">
     </div>
     <div class="form-field">
       <label for="bill-status">Bill Status:</label>
-      <select id="bill-status" name="bill-status" [(ngModel)]="billOverview.billStatus">
+      <select id="bill-status" name="bill-status" [(ngModel)]="billStatus">
         <option value="UPCOMING">UPCOMING</option>
         <option value="PENDING">PENDING</option>
         <option value="PAID">PAID</option>
@@ -31,7 +25,20 @@
     <div style="text-align: center;">
         <button type="submit">Submit</button>
     </div>
-  </form>
-    <div style="text-align: center;">
-        {{billOverview | json}}
+</form>
+<div class="table">
+  <div class="table-row header">
+    <div class="table-cell">Category</div>
+    <div class="table-cell">Count</div>
+    <div class="table-cell"></div>
+  </div>
+  <div class="table-row" *ngFor="let entry of billOverviewMap | keyvalue">
+    <div class="table-cell">{{ entry.key }}</div>
+    <div class="table-cell">{{ entry.value }}</div>
+    <div class="table-cell centered">
+      <div class="centered-horizontal">
+        <div *ngIf="entry.value > 0" [routerLink]="generateRouterLink(entry.key)">Overview</div>
+      </div>
     </div>
+  </div>
+</div>

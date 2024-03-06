@@ -1,1 +1,82 @@
-<p>add bill works</p>
+<div class="body-all">
+    <div class="form-container">
+        <h2>Add New Bill</h2>
+        <form  (ngSubmit)="addBill()">
+            <div class="form-field">
+                <label for="bill-name">Bill Name:</label>
+                <input [(ngModel)] = "bill.billName" type="text" id="bill-name" name="bill-name" required>
+            </div>
+            <div class="form-field">
+                <label for="bill-date">Bill Date From:</label>
+                <input [(ngModel)] = "bill.billDateFrom" type="date" id="bill-date" name="bill-date" required>
+            </div>
+            <div class="form-field">
+                <label for="date-to">Bill Date To:</label>
+                <input [(ngModel)] = "bill.billDateTo" type="date" id="date-to" name="date-to" required>
+            </div>
+            <div class="form-field">
+                <label for="amount">Amount:</label>
+                <input [(ngModel)] = "bill.amount" type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-field">
+                <label for="notes">Notes (if any):</label>
+                <textarea [(ngModel)] = "bill.notes" id="notes" name="notes"></textarea>
+            </div>
+            <div class="form-field">
+                <label for="bill-category">Bill Category:</label>
+                <select [(ngModel)]="bill.billCategory" id="bill-category" name="bill-category" required >
+                    <option value="HOUSE_RENT">HOUSE_RENT</option>
+                    <option value="GROCERIES">GROCERIES</option>
+                    <option value="DEBT_PAYMENTS">DEBT_PAYMENTS</option>
+                    <option value="INTERNET_CHARGES">INTERNET_CHARGES</option>
+                    <option value="RETIREMENT_CHARGES">RETIREMENT_CHARGES</option>
+                    <option value="CELL_PHONE_CHARGES">CELL_PHONE_CHARGES</option>
+                </select>
+            </div>
+            <div *ngIf="bill.billCategory ==='HOUSE_RENT' || 'GROCERIES' || 'INTERNET_CHARGES' || 'CELL_PHONE_CHARGES'">
+                <div class="form-field">
+                    <label for="sl-no">Sl. No.:</label>
+                    <input [(ngModel)] = "bill.slNo" type="number" id="sl-no" name="sl-no" required>
+                </div>
+            </div>
+
+            <div *ngIf="bill.billCategory ==='DEBT_PAYMENTS'">
+                <div class="form-field">
+                    <label for="sl-no">Sl. No.:</label>
+                    <input [(ngModel)] = "bill.slNo" type="number" id="sl-no" name="sl-no" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="emi">Monthly EMI:</label>
+                    <input [(ngModel)] = "bill.monthlyEMI" type="number" id="emi" name="emi" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="total-loan">Total Loan:</label>
+                    <input [(ngModel)] = "bill.totalLoan" type="number" id="total-loan" name="total-loan" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="bill-loan-type">Bill Loan Type:</label>
+                    <select [(ngModel)]="bill.billLoanType" id="bill-loan-type" name="bill-loan-type" required >
+                        <option value="HOME_LOAN">HOME_LOAN</option>
+                        <option value="CAR_LOAN">CAR_LOAN</option>
+                        <option value="EDUCATION_LOAN">EDUCATION_LOAN</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div *ngIf="bill.billCategory ==='RETIREMENT_CHARGES'">
+                <div class="form-field">
+                    <input [(ngModel)]="bill.isRecurrent" type="checkbox" id="isRecurrent" name="isRecurrent" value="bill.isRecurrent">
+                    <label for="isRecurrent"> Recurrent Bill</label><br>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="save" routerLink="/manage-bill" routerLinkActive = "active">Save</button>
+                <button type="button" class="cancel" routerLink="/manage-bill" routerLinkActive = "active">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

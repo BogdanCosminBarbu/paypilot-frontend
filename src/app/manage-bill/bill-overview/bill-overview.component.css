@@ -7,3 +7,91 @@
   .form-field {
     margin: 10px;
   }
+
+    .label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  
+    /* Select Container */
+    .select-container {
+      position: relative;
+    }
+  
+    /* Select */
+    .select-container select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      appearance: none;
+      /* Removes default arrow in Chrome/Safari */
+      background-color: #f9f9f9;
+      /* Light gray background */
+      cursor: pointer;
+      /* Show pointer cursor on hover */
+    }
+  
+    /* Select Arrow */
+    .select-container::after {
+      content: '\25BC';
+      /* Down arrow */
+      font-size: 16px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      /* Prevents the arrow from being clickable */
+      color: #666;
+      /* Dark gray color */
+    }
+  
+    /* Table */
+/* Table */
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Table Row */
+.table-row {
+  border-bottom: 1px solid #ddd;
+  /* Light gray bottom border */
+  display: flex;
+  /* Set display to flex */
+}
+
+/* Table Cell */
+.table-cell {
+  padding: 10px;
+  text-align: left;
+  /* Align text to the left */
+  flex: 1;
+  /* Equal width for both columns */
+}
+
+/* Header Row */
+.table-row.header {
+  font-weight: bold;
+  background-color: #f2f2f2;
+  /* Light gray background */
+}
+
+.centered-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.overview-button {
+  margin-left: auto;
+}
