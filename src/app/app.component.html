@@ -1,10 +1,14 @@
 <h1>{{"Pay Pilot Project"}}</h1>
-<nav class="d-flex navbar navbar-dark" style="background-color: pink">
-  <a routerLink ="login" routerLinkActive = "active">Login</a>
-  <a routerLink ="manage-bill" routerLinkActive = "active">Manage Bills</a>
-  <a routerLink ="notification" routerLinkActive = "active">Notifications</a>
-  <a routerLink ="schedule-payments" routerLinkActive = "active">Schedule Payments</a>
-  <a routerLink ="track-payments" routerLinkActive = "active">Track Payments</a>
-</nav>
-<router-outlet></router-outlet>
+<div class="body-all">
+  <nav class="navbar">
+    <a routerLink ="login" routerLinkActive = "active">Login</a>
+    <a routerLink ="manage-bill" routerLinkActive = "active">Manage Bills</a>
+    <a routerLink ="notification" routerLinkActive = "active">Notifications</a>
+    <a routerLink ="schedule-payments" routerLinkActive = "active">Schedule Payments</a>
+    <a routerLink ="track-payments" routerLinkActive = "active">Track Payments</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+
+
 
