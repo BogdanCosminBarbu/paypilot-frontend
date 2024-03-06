@@ -14,7 +14,7 @@ export class ScheduledPaymentsService {
   constructor(private http: HttpClient) { }
 
   getScheduledPayments(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}/all`);
   }
 
   getBills(category: string, dateFrom: string, dateTo: string): Observable<any> {
@@ -32,5 +32,14 @@ export class ScheduledPaymentsService {
 
   createScheduledPayment(schPaymentData: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/create`, schPaymentData);
+  }
+
+  cancelScheduledPayment(id: number): Observable<any> {
+    return this.http.put(`${this.baseUrl}/cancel/${id}`, null);
+  }
+
+  modifyScheduleDate(id: number, nextPaymentDate: string) {
+    const dto = { nextPaymentDate: nextPaymentDate };
+    return this.http.put(`${this.baseUrl}/modify-date/${id}`, dto);
   }
 }

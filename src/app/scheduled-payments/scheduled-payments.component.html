@@ -1,5 +1,5 @@
 <div class="payment-scheduler">
-    <form *ngIf="!isSchedulingInitiated" [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+    <form *ngIf="!isSchedulingInitiated && !isCancelModifyPage && !isModifyPage" [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="billCategory">Bill Category</label>
         <select id="billCategory" formControlName="billCategory" required>
@@ -23,7 +23,7 @@
       <button type="button" (click)="fetchBills()">Next</button>
     </form>
 
-    <div *ngIf="!isSchedulingInitiated && bills.length > 0" class="bills-container">
+    <div *ngIf="!isSchedulingInitiated && bills.length > 0 && !isCancelModifyPage && !isModifyPage" class="bills-container">
       <form>
         <div class="row" *ngFor="let bill of bills; let i = index">
           <label>
@@ -31,11 +31,12 @@
             <span>{{ bill.name }} - {{ bill.amount }} - {{ bill.due_date }} - {{ bill.billing_cycle }}</span>
           </label>
         </div>
-        <button type="button" (click)="schedulePayment()">Schedule Payment</button>
+        <button type="button" (click)="schedulePayment()" [disabled]="buttonsDisabled">Schedule Payment</button>
+        <button type="button" (click)="moveOnCancelModifyPage()" [disabled]="buttonsDisabled">Cancel/Modify Schedule</button>
       </form>
     </div>
 
-    <div *ngIf="isSchedulingInitiated" class="schedule-creation">
+    <div *ngIf="isSchedulingInitiated && !isCancelModifyPage && !isModifyPage" class="schedule-creation" >
       <form [formGroup]="schedulePaymentForm">
         <div class="form-field">
           <label>Bill Category: </label>
@@ -119,7 +120,33 @@
         <button type="submit" (click)="confirmPayment()">Confirm Payment</button>
       </form>
     </div>
-    
+</div>
+
+<div>
+  <div *ngIf ="isCancelModifyPage && !isModifyPage">
+    <form>
+      <div class="row" *ngFor="let sch of scheduledPayments; let i = index">
+        <label>
+          <input type="radio" name="selectedSchedule" [value]="sch.id" (change)="onSchedulelSelectionChange(sch.id)">
+          <span>{{ sch.amountToPay }} - {{ sch.nameOfTheBill }} - {{ sch.billDate }} - {{ sch.nextPaymentDate }}</span>
+        </label>
+      </div>
+      <button type="button" (click)="cancelSchedulePayment()">Cancel Selected Schedule</button>
+      <button type="button" (click)="moveOnModifyPage()">Modify Schedule</button>
+    </form>
+  </div> 
+  
+    <div *ngIf = "isModifyPage">
+      <form>
+        <input type="date" [(ngModel)] ="currentScheduleDate"  name="nextPaymentDate" readonly>
+        <input type="date" [(ngModel)]="newNextPaymentDate" name="newNextPaymentDate">
+        <button type="button" (click)="modifySchedulePayment()">Modify Schedule</button>
+      </form>
+    </div>
+
+  <div *ngIf="cancelSuccessMessage" class="success-message">
+    {{ cancelSuccessMessage }}
+  </div>
 </div>
 
 

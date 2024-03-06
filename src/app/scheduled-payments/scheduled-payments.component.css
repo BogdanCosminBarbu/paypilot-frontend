@@ -50,3 +50,10 @@
     align-items: center; 
 }
   
+.success-message {
+  color: #fff;
+  background-color: #28a745;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
