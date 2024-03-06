@@ -35,7 +35,17 @@ import { BillOverviewService } from './bill-overview.service';
     HttpClientModule,
     CommonModule,
     RouterTestingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'manage-bills',
+        component: ManageBillComponent
+      },
+      {
+        path: 'manage-bills/add-bill',
+        component: AddBillComponent
+      }
+    ])
   ],
   providers: [
     NotificationService,

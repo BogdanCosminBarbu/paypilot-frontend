@@ -29,3 +29,15 @@
   .right {
     justify-content: flex-end;
   }
+
+.secondary-button {
+    background-color: blue; /* Red background */
+    color: white; /* White text */
+    padding: 20px 40px; /* Size of the button */
+    border-radius: 40px; /* Rounded edges */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change mouse cursor on hover */
+    font-size: 24px; /* Size of the text */
+    text-align: center; /* Center the text */
+    margin: 30px;
+}
