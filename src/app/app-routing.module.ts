@@ -7,6 +7,9 @@ import { NotificationComponent } from './notification/notification.component';
 import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payments.component';
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
+import { TrackPaymentsProgressComponent } from './track-payments/track-payments-progress/track-payments-progress.component';
+import { TrackPaymentsOverviewComponent } from './track-payments/track-payments-overview/track-payments-overview.component';
+import { TrackPaymentsHistoryComponent } from './track-payments/track-payments-history/track-payments-history.component';
 
 const routes: Routes = [
   {
@@ -36,6 +39,18 @@ const routes: Routes = [
   {
     path : 'bill-overview',
     component : BillOverviewComponent
+  },
+  {
+    path : 'track-payments/payments-progress',
+    component : TrackPaymentsProgressComponent
+  },
+  {
+    path : 'track-payments/payments-overview',
+    component : TrackPaymentsOverviewComponent
+  },
+  {
+    path : 'track-payments/payments-history',
+    component : TrackPaymentsHistoryComponent
   }
 ];
 

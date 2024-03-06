@@ -14,11 +14,17 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
 import { BillOverviewService } from './bill-overview.service';
 import { RouterModule } from '@angular/router';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
+import { TrackPaymentsHistoryComponent } from './track-payments/track-payments-history/track-payments-history.component';
+import { TrackPaymentsOverviewComponent } from './track-payments/track-payments-overview/track-payments-overview.component';
+import { TrackPaymentsProgressComponent } from './track-payments/track-payments-progress/track-payments-progress.component';
+import { TrackPaymentsProgressService } from './track-payments/track-payments-progress/track-payments-progress.service';
+import { TrackPaymentsHistoryService } from './track-payments/track-payments-history/track-payments-histtory.service';
+import { TrackPaymentsOverviewService } from './track-payments/track-payments-overview/track-payments-overview.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +35,10 @@ import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
     NotificationComponent,
     TrackPaymentsComponent,
     ManageBillComponent,
-    BillOverviewComponent
+    BillOverviewComponent,
+    TrackPaymentsHistoryComponent,
+    TrackPaymentsOverviewComponent,
+    TrackPaymentsProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +47,7 @@ import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
     CommonModule,
     RouterTestingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: 'manage-bills',
@@ -52,7 +62,10 @@ import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
   providers: [
     NotificationService,
     HttpClient,
-    BillOverviewService
+    BillOverviewService,
+    TrackPaymentsProgressService,
+    TrackPaymentsHistoryService,
+    TrackPaymentsOverviewService
   ],
   bootstrap: [AppComponent]
 })
