@@ -1,0 +1,52 @@
+.payment-scheduler {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .payment-scheduler h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    color: #666;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  button {
+    background-color: #0062cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #004085;
+  }
+
+  .square-container {
+    border: 2px solid #7a5252; 
+    padding: 20px;
+    width: 150px; 
+    height: 50px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+  
