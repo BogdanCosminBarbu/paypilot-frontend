@@ -7,10 +7,8 @@ import { Router } from '@angular/router';
   styleUrl: './manage-bill.component.css'
 })
 export class ManageBillComponent {
+  
   constructor(private router: Router) { }
-
-
-  constructor(private router: Router) {}
 
   goToMHome(): void {
     this.router.navigate(['/']);

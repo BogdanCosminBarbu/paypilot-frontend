@@ -17,6 +17,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
 import { BillOverviewService } from './bill-overview.service';
+import { RouterModule } from '@angular/router';
+import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
 
 @NgModule({
   declarations: [
