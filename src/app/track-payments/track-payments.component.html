@@ -1,10 +1,45 @@
-<p>track-payments works!</p>
-
-<a routerLink ="payments-progress" routerLinkActive = "active">Payment Progress</a>
-<a routerLink ="payments-overview" routerLinkActive = "active">Payment Overview</a>
-<a routerLink ="payments-history" routerLinkActive = "active">Payment History</a>
-
-
 <router-outlet>
-    <p>Track your payments</p>
+    <p style = "background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+    font-size: 100px; 
+    text-align: center;">Track your payments</p>
 </router-outlet>
+
+<div class="payment-scheduler">
+    <div class="form-group">
+        <a style="background-color: #0062cc;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 1rem auto;
+        margin-right: 20px;
+        font-size: 20px;
+        align-items: center;" routerLink ="payments-progress" routerLinkActive = "active">Payment Progress</a>
+        <a style="background-color: #0062cc;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 1rem auto;
+        margin-right: 20px;
+        font-size: 20px;
+        align-items: center;" routerLink ="payments-overview" routerLinkActive = "active">Payment Overview</a>
+        <a style="background-color: #0062cc;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 1rem auto;
+        font-size: 20px;
+        margin-right: 20px;
+        align-items: center;" routerLink ="payments-history" routerLinkActive = "active">Payment History</a>
+    </div>
+</div>
