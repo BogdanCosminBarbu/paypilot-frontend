@@ -28,6 +28,7 @@ export class ScheduledPaymentsComponent implements OnInit {
   isModifyPage = false;
   currentScheduleDate : string | undefined;
   buttonsDisabled: boolean = true;
+  modifyScheduleButtonsDisabled: boolean = true;
 
   constructor(private scheduledPaymentsService: ScheduledPaymentsService, 
     private fb: FormBuilder) {
@@ -102,7 +103,6 @@ export class ScheduledPaymentsComponent implements OnInit {
     this.selectedBill = this.bills.find(bill => bill.id === +selectedBillId);
   }
 
-  //here, when the user presses Sch Paym button, it fetches the current user
   schedulePayment() {
     if(this.selectedBillId) {
       this.isSchedulingInitiated = true;
@@ -187,6 +187,7 @@ export class ScheduledPaymentsComponent implements OnInit {
   }
   
   onSchedulelSelectionChange(selectedScheduleId : any) {
+    this.modifyScheduleButtonsDisabled = false;
     this.selectedScheduleId = selectedScheduleId;
     this.selectedSchedule = this.scheduledPayments.find(sch => sch.id === +selectedScheduleId);
     this.currentScheduleDate = this.selectedSchedule?.nextPaymentDate;
@@ -195,7 +196,7 @@ export class ScheduledPaymentsComponent implements OnInit {
   cancelSchedulePayment() {
     this.scheduledPaymentsService.cancelScheduledPayment(this.selectedScheduleId).subscribe({
       next: (response) => {
-        this.cancelSuccessMessage = "Scheduled Payment Cancelled Successfully";
+        alert("Scheduled Payment Cancelled Successfully");
       },
       error: (error) => {
         console.error('Error cancelling scheduled payment:', error);
@@ -217,11 +218,11 @@ export class ScheduledPaymentsComponent implements OnInit {
             alert('Schedule date modified successfully');
           },
           (error) => {
-            console.error('Error modifying schedule date', error);
+            alert('Error modifying schedule date');
           }
         );
     } else {
-      console.error('No schedule selected or new date not specified');
+      alert('No schedule selected or new date not specified');
     }
   }
 }
