@@ -1,0 +1,51 @@
+<div class="payment-scheduler">
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="large-text" for="billCategory">Bill Category</label>
+        <select id="billCategory" formControlName="billCategory" required>
+          <option value="ALL">All</option>
+          <option value="DEBT_PAYMENTS">Debt Payments</option>
+          <option value="HOUSE_RENT">House Rent</option>
+          <option value="GROCERIES">Groceries</option>
+          <option value="INTERNET_CHARGES">Internet Charges</option>
+          <option value="RETIREMENT_CHARGES">Retirement Charges</option>
+          <option value="CELL_PHONE_CHARGES">Cell Phone Charges</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="large-text" for="billName">Bill Name</label>
+        <input id="billName" formControlName="billName" required>
+      </div>
+      <button type="button" (click)="fetchBills()">Search</button>
+    </form>
+
+    <br>
+    <br>
+
+    <div *ngIf="bills.length > 0" class="bills-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Amount Due</th>
+            <th>Total Amount</th>
+            <th>Bill Name</th>
+            <th>Due Date</th>
+            <th>Overdue Days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bill of bills; let i = index">
+            <td>{{ bill.due_amount }}</td>
+            <td>{{ bill.amount }}</td>
+            <td>{{ bill.name }}</td>
+            <td>{{ bill.due_date }}</td>
+            <td>{{ bill.overdueBy }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+</div>
+<br>
+<br>
+<button (click)="goBack()">Go Back</button>

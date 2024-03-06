@@ -1,5 +1,6 @@
 import { BillCategory } from "../../constants/bill-category";
-
+import { ReminderSettings } from "../../notification/model/reminderSettings.model";
+ 
 export class Bill {
   billId: number | undefined;
   billName: string | undefined;
@@ -17,6 +18,8 @@ export class Bill {
   billDateFrom: Date | undefined;
   billDateTo: Date | undefined;
   billLoanType: string | undefined;
-  user: string | null | undefined; // add correct type
-  notificationList: string | undefined; // add correct type
+  user: string | null | undefined; // add correct type;
+  notificationList: string | undefined; // add correct type;
+  reminderSettings: ReminderSettings | null | undefined;
+
 }
