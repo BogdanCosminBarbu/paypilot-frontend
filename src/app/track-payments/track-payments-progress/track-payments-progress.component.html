@@ -1,9 +1,7 @@
-<p>track-payments-progress works!</p>
-
 <div class="payment-scheduler">
     <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="billCategory">Bill Category</label>
+        <label class="large-text" for="billCategory">Bill Category</label>
         <select id="billCategory" formControlName="billCategory" required>
           <option value="ALL">All</option>
           <option value="DEBT_PAYMENTS">Debt Payments</option>
@@ -15,22 +13,39 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="billName">Bill Name</label>
+        <label class="large-text" for="billName">Bill Name</label>
         <input id="billName" formControlName="billName" required>
       </div>
       <button type="button" (click)="fetchBills()">Search</button>
     </form>
 
+    <br>
+    <br>
+
     <div *ngIf="bills.length > 0" class="bills-container">
-      <form>
-        <div class="row" *ngFor="let bill of bills; let i = index">
-          <label>
-            <input type="radio" name="selectedBill">
-            <span>{{ bill.due_amount }} - {{bill.amount}} - {{ bill.name }} - {{ bill.due_date }} - Overdue by {{bill.overdueBy}} days</span>
-          </label>
-        </div>
-      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Amount Due</th>
+            <th>Total Amount</th>
+            <th>Bill Name</th>
+            <th>Due Date</th>
+            <th>Overdue Days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bill of bills; let i = index">
+            <td>{{ bill.due_amount }}</td>
+            <td>{{ bill.amount }}</td>
+            <td>{{ bill.name }}</td>
+            <td>{{ bill.due_date }}</td>
+            <td>{{ bill.overdueBy }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     
 </div>
-<button (click)="goBack()">Go Back</button>
+<br>
+<br>
+<button class="button" (click)="goBack()">Go Back</button>
