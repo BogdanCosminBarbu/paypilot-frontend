@@ -2,7 +2,7 @@
 <form class="form-container" #billOverviewForm = "ngForm" (ngSubmit)="onSubmit()">
     <div class="form-field">
       <label for="bill-category">Bill Category:</label>
-      <select id="bill-category" name="bill-category" [(ngModel)]="billOverview.billCategory">
+      <select id="bill-category" name="bill-category" [(ngModel)]="billCategory">
         <option value="ALL">ALL</option>
         <option value="DEBT_PAYMENTS">DEBT PAYMENTS</option>
         <option value="HOUSE_RENT">HOUSE RENT</option>
@@ -14,15 +14,15 @@
     </div>
     <div class="form-field">
       <label for="bill-date-from">Bill Date From:</label>
-      <input type="date" id="bill-date-from" name="dateFrom" [(ngModel)]="billOverview.billDateFrom">
+      <input type="date" id="bill-date-from" name="dateFrom" [(ngModel)]="dateFrom">
     </div>
     <div class="form-field">
       <label for="bill-date-to">Bill Date To:</label>
-      <input type="date" id="bill-date-to" name="dateTo" [(ngModel)]="billOverview.billDateTo">
+      <input type="date" id="bill-date-to" name="dateTo" [(ngModel)]="dateTo">
     </div>
     <div class="form-field">
       <label for="bill-status">Bill Status:</label>
-      <select id="bill-status" name="bill-status" [(ngModel)]="billOverview.billStatus">
+      <select id="bill-status" name="bill-status" [(ngModel)]="billStatus">
         <option value="UPCOMING">UPCOMING</option>
         <option value="PENDING">PENDING</option>
         <option value="PAID">PAID</option>
@@ -33,5 +33,8 @@
     </div>
   </form>
     <div style="text-align: center;">
-        {{billOverview | json}}
+        {{billOverview.billCategory?.valueOf}}
+        {{billOverview.billStatus?.valueOf}}
+        {{billOverview.dateFrom?.valueOf}}
+        {{billOverview.dateTo?.valueOf}}
     </div>
