@@ -75,7 +75,7 @@ const routes: Routes = [
     path:'cell-phone-charges',
     component : BillCellphoneComponent
   },
-
+  {
     path:'reminder-settings',
     component : ReminderSettingsComponent
   }

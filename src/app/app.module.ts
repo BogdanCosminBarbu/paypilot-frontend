@@ -42,7 +42,7 @@ import { ReminderSettingsComponent } from './manage-bill/reminder-settings/remin
     BillInternetComponent,
     BillRentComponent,
     BillRetirementComponent,
-    BillCellphoneComponent
+    BillCellphoneComponent,
     ReminderSettingsComponent
   ],
   imports: [
