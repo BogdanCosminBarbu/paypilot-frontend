@@ -19,6 +19,9 @@ import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview
 import { BillOverviewService } from './bill-overview.service';
 import { RouterModule } from '@angular/router';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
+import { BillOverdueUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue-upcoming.component';
+import { BillOverdueComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue/bill-overdue.component';
+import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-upcoming/bill-upcoming.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
     NotificationComponent,
     TrackPaymentsComponent,
     ManageBillComponent,
-    BillOverviewComponent
+    BillOverviewComponent,
+    BillOverdueUpcomingComponent,
+    BillOverdueComponent,
+    BillUpcomingComponent
   ],
   imports: [
     BrowserModule,

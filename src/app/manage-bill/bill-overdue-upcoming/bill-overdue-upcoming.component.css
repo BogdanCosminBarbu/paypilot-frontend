@@ -1,0 +1,44 @@
+.body-all {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.button-container {
+    display: flex;
+    align-items: center;
+}
+.big-icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px; /* Adjusted width */
+    height: 400px; /* Adjusted height */
+    border-radius: 50%;
+    background-color: #4caf50;
+    margin: 0 20px; /* Increased margin for spacing */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.big-icon-button:hover {
+    background-color: #45a049;
+}
+.big-icon-button:first-child {
+    margin-left: 0;
+}
+.big-icon-button:last-child {
+    margin-right: 0;
+}
+.vertical-line {
+    width: 2px;
+    height: 800px; /* Match button height */
+    background-color: #ccc;
+    margin: 0 30px; /* Increased margin for spacing */
+}
+.big-icon {
+    color: white;
+    font-size: 60px; /* Adjusted font size */
+}

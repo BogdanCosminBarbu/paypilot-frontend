@@ -8,6 +8,9 @@ import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payme
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
+import { BillOverdueUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue-upcoming.component';
+import { BillOverdueComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue/bill-overdue.component';
+import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-upcoming/bill-upcoming.component';
 
 const routes: Routes = [
   {
@@ -41,6 +44,18 @@ const routes: Routes = [
   {
     path:'add-bill',
     component : AddBillComponent
+  },
+  {
+    path:'bill-overdue-upcoming',
+    component : BillOverdueUpcomingComponent
+  },
+  {
+    path:'bill-overdue',
+    component : BillOverdueComponent
+  },
+  {
+    path:'bill-upcoming',
+    component : BillUpcomingComponent
   }
 ];
 
