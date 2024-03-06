@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class NotificationService {
-  private baseUrl = 'http://yourbackendapi.com/notifications'; // Change to your backend URL
+  private baseUrl = 'http://localhost:8082/notification';
 
   constructor(private http: HttpClient) {}
 
