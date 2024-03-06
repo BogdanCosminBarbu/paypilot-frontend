@@ -7,7 +7,7 @@ import { BillGroceries } from './model/bill-groceries.model';
   providedIn: 'root'
 })
 export class BillGroceriesService {
-  private url: string = "http://localhost:8082/bill/groceries";
+  private url: string = "http://localhost:8082/bill/groceriesBills";
 
   constructor(private httpClient: HttpClient) {}
 

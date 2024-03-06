@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BillInternet } from './model/bill-internet.model';
 import { BillInternetService } from './bill-internet.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bill-internet',
@@ -10,11 +11,15 @@ import { BillInternetService } from './bill-internet.service';
 export class BillInternetComponent implements OnInit {
   bills: BillInternet[] = [];
 
-  constructor(private billInternetService: BillInternetService) {}
+  constructor(private billInternetService: BillInternetService, private router: Router) {}
 
   ngOnInit(): void {
     this.billInternetService.getAll().subscribe(
       data => this.bills = data 
     );
+  }
+
+  goBackToBillOverview(): void {
+    this.router.navigateByUrl('/bill-overview');
   }
 }

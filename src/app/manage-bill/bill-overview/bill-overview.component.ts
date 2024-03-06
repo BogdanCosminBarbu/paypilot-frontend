@@ -22,7 +22,10 @@ export class BillOverviewComponent {
   categories: BillCategory[] = Object.values(BillCategory);
 
   ngOnInit(): void {
-    // Call the backend service to fetch bill overview
+    this.billOverview.billCategory = this.billCategory;
+    this.billOverview.billStatus = this.billStatus;
+    this.billOverview.dateFrom = this.dateFrom;
+    this.billOverview.dateTo = this.dateTo;
     
   }
 

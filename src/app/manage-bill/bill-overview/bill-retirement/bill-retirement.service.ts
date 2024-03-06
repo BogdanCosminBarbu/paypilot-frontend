@@ -7,7 +7,7 @@ import { BillRetirement } from './model/bill-retirement.model';
   providedIn: 'root'
 })
 export class BillRetirementService {
-  private url: string = "http://localhost:8082/bill/retirement";
+  private url: string = "http://localhost:8082/bill/retirementBills";
 
   constructor(private httpClient: HttpClient) {}
 

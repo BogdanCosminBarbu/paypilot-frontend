@@ -10,9 +10,9 @@ export class BillCellphoneService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private url: string = "http://localhost:8082/bill/phone"
+  private url: string = "http://localhost:8082/phone"
 
   public getAll(): Observable<any> {
-    return this.httpClient.get(this.url);
+    return this.httpClient.get(this.url + '/all');
   }
 }

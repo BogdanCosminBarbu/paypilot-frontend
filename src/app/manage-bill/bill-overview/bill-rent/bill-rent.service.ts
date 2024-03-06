@@ -7,11 +7,11 @@ import { BillRent } from './model/bill-rent.model';
   providedIn: 'root'
 })
 export class BillRentService {
-  private url: string = "http://localhost:8082/bill/rent";
+  private url: string = "http://localhost:8082/rent";
 
   constructor(private httpClient: HttpClient) {}
 
   public getAll(): Observable<BillRent[]> {
-    return this.httpClient.get<BillRent[]>(this.url);
+    return this.httpClient.get<BillRent[]>(this.url + '/all');
   }
 }

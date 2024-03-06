@@ -7,7 +7,7 @@ import { BillInternet } from './model/bill-internet.model';
   providedIn: 'root'
 })
 export class BillInternetService {
-  private url: string = "http://localhost:8082/bill/internet";
+  private url: string = "http://localhost:8082/bill/internetBills";
 
   constructor(private httpClient: HttpClient) {}
 

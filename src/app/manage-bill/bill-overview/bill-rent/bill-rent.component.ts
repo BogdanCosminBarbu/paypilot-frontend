@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BillRent } from './model/bill-rent.model';
 import { BillRentService } from './bill-rent.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bill-rent',
@@ -11,11 +12,15 @@ import { BillRentService } from './bill-rent.service';
 export class BillRentComponent implements OnInit {
   bills: BillRent[] = [];
 
-  constructor(private billRentService: BillRentService) {}
+  constructor(private billRentService: BillRentService, private router: Router) {}
 
   ngOnInit(): void {
     this.billRentService.getAll().subscribe(
       data => this.bills = data 
     );
+  }
+
+  goBackToBillOverview(): void {
+    this.router.navigateByUrl('/bill-overview');
   }
 }

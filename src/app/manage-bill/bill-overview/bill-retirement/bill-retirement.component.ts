@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { BillRetirementService } from './bill-retirement.service';
 import { BillRetirement } from './model/bill-retirement.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bill-retirement',
@@ -12,11 +13,15 @@ import { BillRetirement } from './model/bill-retirement.model';
 export class BillRetirementComponent implements OnInit {
   bills: BillRetirement[] = [];
 
-  constructor(private billRetirementService : BillRetirementService) {}
+  constructor(private billRetirementService : BillRetirementService, private router: Router) {}
 
   ngOnInit(): void {
     this.billRetirementService.getAll().subscribe(
       data => this.bills = data 
     );
+  }
+
+  goBackToBillOverview(): void {
+    this.router.navigateByUrl('/bill-overview');
   }
 }
