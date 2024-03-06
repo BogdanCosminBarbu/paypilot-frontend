@@ -11,6 +11,8 @@ import { BillCategory } from '../../constants/bill-category';
 })
 export class BillOverviewComponent {
 
+  
+
   public constructor(private service: BillOverviewService){}
 
   public billOverview: BillOverview = new BillOverview();

@@ -8,19 +8,12 @@ import { ScheduledPaymentsComponent } from './scheduled-payments/scheduled-payme
 import { TrackPaymentsComponent } from './track-payments/track-payments.component';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
-
 import { BillOverdueUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue-upcoming.component';
 import { BillOverdueComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue/bill-overdue.component';
 import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-upcoming/bill-upcoming.component';
-import { BillDebtComponent } from './manage-bill/bill-overview/bill-debt/bill-debt.component';
-import { BillRentComponent } from './manage-bill/bill-overview/bill-rent/bill-rent.component';
-import { BillGroceriesComponent } from './manage-bill/bill-overview/bill-groceries/bill-groceries.component';
-import { BillInternetComponent } from './manage-bill/bill-overview/bill-internet/bill-internet.component';
-import { BillRetirementComponent } from './manage-bill/bill-overview/bill-retirement/bill-retirement.component';
-import { BillCellphoneComponent } from './manage-bill/bill-overview/bill-cellphone/bill-cellphone.component';
-import { ReminderSettingsComponent } from './manage-bill/reminder-settings/reminder-settings.component';
-
-
+import { TrackPaymentsProgressComponent } from './track-payments/track-payments-progress/track-payments-progress.component';
+import { TrackPaymentsOverviewComponent } from './track-payments/track-payments-overview/track-payments-overview.component';
+import { TrackPaymentsHistoryComponent } from './track-payments/track-payments-history/track-payments-history.component';
 
 const routes: Routes = [
   {
@@ -68,32 +61,16 @@ const routes: Routes = [
     component : BillUpcomingComponent
   },
   {
-    path:'debt-payments',
-    component : BillDebtComponent
+    path : 'track-payments/payments-progress',
+    component : TrackPaymentsProgressComponent
   },
   {
-    path:'house-rent',
-    component : BillRentComponent
+    path : 'track-payments/payments-overview',
+    component : TrackPaymentsOverviewComponent
   },
   {
-    path:'groceries',
-    component : BillGroceriesComponent
-  },
-  {
-    path:'internet-charges',
-    component : BillInternetComponent
-  },
-  {
-    path:'retirement-charges',
-    component : BillRetirementComponent
-  },
-  {
-    path:'cell-phone-charges',
-    component : BillCellphoneComponent
-  },
-  {
-    path:'reminder-settings',
-    component : ReminderSettingsComponent
+    path : 'track-payments/payments-history',
+    component : TrackPaymentsHistoryComponent
   }
 ];
 

@@ -1,41 +1,4 @@
-.dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown a:hover {background-color: #ddd;}
-
-  .payment-scheduler {
+.payment-scheduler {
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -81,7 +44,7 @@
   button:hover {
     background-color: #004085;
   }
-  
+
   .square-container {
     border: 2px solid #7a5252; 
     padding: 20px;
@@ -92,25 +55,25 @@
     justify-content: center;
     align-items: center; 
     text-align: center;
-  }
-  
-  .bills-container table {
+}
+
+.bills-container table {
   width: 100%; /* Adjust table width as necessary */
   border-collapse: collapse; /* Ensures that table borders are collapsed into a single border */
   text-align: center; /* Center-aligns text in the cells */
-  }
-  
-  .bills-container th, .bills-container td {
+}
+
+.bills-container th, .bills-container td {
   border: 1px solid black; /* Adds black borders to table cells */
   padding: 10px; /* Adds some padding for text inside cells */
   font-size: 18px; /* Increases the font size */
-  }
-  
-  .bills-container th {
+}
+
+.bills-container th {
   background-color: darkpurple; /* Sets the background color of the header to dark purple */
   color: rgb(87, 12, 62); /* Sets the text color of the header to white */
-  }  
-  
-  .large-text {
+}  
+
+.large-text {
   font-size: 24px; /* Change this value as needed */
-  }
+}
