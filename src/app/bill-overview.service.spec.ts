@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BillOverviewService } from './bill-overview.service';
+import { BillOverviewService } from '../app/manage-bill/service/bill-overview.service';
 
 describe('BillOverviewService', () => {
   let service: BillOverviewService;
