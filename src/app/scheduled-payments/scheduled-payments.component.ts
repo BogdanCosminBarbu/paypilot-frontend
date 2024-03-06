@@ -3,6 +3,8 @@ import { ScheduledPaymentsService } from './scheduled-payments.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Bill } from './dtos/bill';
 import { User } from './dtos/user';
+import { response } from 'express';
+import { SchedulePayment } from './dtos/schedulePayment';
 
 @Component({
   selector: 'app-scheduled-payments',
@@ -10,7 +12,7 @@ import { User } from './dtos/user';
   styleUrls: ['./scheduled-payments.component.css']
 })
 export class ScheduledPaymentsComponent implements OnInit {
-  scheduledPayments: any;
+  scheduledPayments: SchedulePayment[] = [];
   paymentForm: FormGroup;
   schedulePaymentForm : FormGroup;
   bills: Bill[] = [];
@@ -18,6 +20,14 @@ export class ScheduledPaymentsComponent implements OnInit {
   selectedBill : Bill | undefined;
   isSchedulingInitiated = false;
   selectedUser : User | undefined;
+  cancelSuccessMessage: string | null = null;
+  isCancelModifyPage = false;
+  selectedScheduleId : number = -1;
+  selectedSchedule: SchedulePayment | undefined;
+  newNextPaymentDate: string | undefined;
+  isModifyPage = false;
+  currentScheduleDate : string | undefined;
+  buttonsDisabled: boolean = true;
 
   constructor(private scheduledPaymentsService: ScheduledPaymentsService, 
     private fb: FormBuilder) {
@@ -59,6 +69,7 @@ export class ScheduledPaymentsComponent implements OnInit {
     const dateFrom = this.paymentForm.value.dateFrom;
     const dateTo = this.paymentForm.value.dateTo;
   
+    this.bills = [];
     this.scheduledPaymentsService.getBills(category, dateFrom, dateTo)
       .subscribe(
         data => {
@@ -86,6 +97,7 @@ export class ScheduledPaymentsComponent implements OnInit {
   }
 
   onBillSelectionChange(selectedBillId : any) {
+    this.buttonsDisabled = false;
     this.selectedBillId = selectedBillId;
     this.selectedBill = this.bills.find(bill => bill.id === +selectedBillId);
   }
@@ -122,6 +134,7 @@ export class ScheduledPaymentsComponent implements OnInit {
 
   confirmPayment() {
     if (this.schedulePaymentForm.valid) {
+      this.isSchedulingInitiated = false;
       const paymentData = {
         ...this.schedulePaymentForm.value,
         nameOfTheBill: this.schedulePaymentForm.value.billName,
@@ -138,11 +151,77 @@ export class ScheduledPaymentsComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error scheduling payment:', error);
-          // Handle error, show error message to user
         }
       });
     } else {
       alert('Form is not valid.');
+    }
+  }
+
+  moveOnCancelModifyPage() {
+    this.cancelSuccessMessage = null;
+    this.isCancelModifyPage = true;
+
+    this.scheduledPaymentsService.getScheduledPayments()
+    .subscribe(
+      data => {
+        data.forEach((rawSchedule: {id: any; amountToPay: any; nameOfTheBill: any; billDate: any; nextPaymentDate: any; billId: any}) => {
+          let schPaym: SchedulePayment = {
+            id: rawSchedule.id,
+            amountToPay: rawSchedule.amountToPay,
+            nameOfTheBill: rawSchedule.nameOfTheBill,
+            billDate: rawSchedule.billDate,
+            nextPaymentDate: rawSchedule.nextPaymentDate, 
+          }
+          
+          if(rawSchedule.billId === this.selectedBillId){
+              this.scheduledPayments.push(schPaym);
+          }
+        });
+        console.log(this.scheduledPayments);
+      },
+      error => {
+        console.error('There was an error!', error);
+      }
+    );
+  }
+  
+  onSchedulelSelectionChange(selectedScheduleId : any) {
+    this.selectedScheduleId = selectedScheduleId;
+    this.selectedSchedule = this.scheduledPayments.find(sch => sch.id === +selectedScheduleId);
+    this.currentScheduleDate = this.selectedSchedule?.nextPaymentDate;
+  }
+
+  cancelSchedulePayment() {
+    this.scheduledPaymentsService.cancelScheduledPayment(this.selectedScheduleId).subscribe({
+      next: (response) => {
+        this.cancelSuccessMessage = "Scheduled Payment Cancelled Successfully";
+      },
+      error: (error) => {
+        console.error('Error cancelling scheduled payment:', error);
+      }
+    });
+  }
+
+  moveOnModifyPage(){
+    this.cancelSuccessMessage = null;
+    this.isModifyPage = true;
+    this.isCancelModifyPage = false;
+  }
+
+  modifySchedulePayment() {
+    if (this.selectedScheduleId && this.newNextPaymentDate) {
+      this.scheduledPaymentsService.modifyScheduleDate(this.selectedScheduleId, this.newNextPaymentDate)
+        .subscribe(
+          (response) => {
+            alert('Schedule date modified successfully');
+          },
+          (error) => {
+            console.error('Error modifying schedule date', error);
+          }
+        );
+    } else {
+      console.error('No schedule selected or new date not specified');
     }
   }
 }
