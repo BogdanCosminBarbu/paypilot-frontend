@@ -1,16 +1,15 @@
-<!-- <p>manage-bill works!</p>
-
-<button class="secondary-button" (click)="goToMHome()">Add new Bill</button>
-<button class="secondary-button" (click)="goToMHome()">Bills Overview</button>
-<button class="secondary-button" (click)="goToMHome()">Reminder Settings</button>
-<button class="secondary-button" (click)="goToMHome()">Upcoming/Overdue Bills</button>
-<button class="secondary-button" (click)="goToMHome()">Snooze or mark paid bills</button>
-
-<button class="secondary-button" (click)="goToMHome()">Go to home</button>
- -->
-
-<div>
-    <div style="text-align: right; padding-right: 30px">
-        <a href="/manage-bills/add-bill" style="font-size: 30px">Add Bill</a>
-      </div>
+<div style="text-align: center;">
+    <h1>Manage Bills</h1>
 </div>
+<div class="row">
+    <button class="button big-button" >Add New Bill</button>
+    <button class="button big-button" (click)="toOverview()">Bills Overview</button>
+  </div>
+  <div style="text-align: center;">
+    <button class="button big-button">Reminder Settings</button>
+  </div>
+  <div class="row">
+    <button class="button big-button">Upcoming/Overdue Bills</button>
+    <button class="button big-button">Snooze or mark paid bills</button>
+  </div>
+  <router-outlet></router-outlet>
