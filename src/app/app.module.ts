@@ -16,12 +16,13 @@ import { CommonModule } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { BillOverviewComponent } from './manage-bill/bill-overview/bill-overview.component';
-import { BillOverviewService } from './bill-overview.service';
 import { RouterModule } from '@angular/router';
 import { AddBillComponent } from './manage-bill/add-bill/add-bill.component';
 import { BillOverdueUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue-upcoming.component';
 import { BillOverdueComponent } from './manage-bill/bill-overdue-upcoming/bill-overdue/bill-overdue.component';
 import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-upcoming/bill-upcoming.component';
+import { AddBillService } from './manage-bill/service/add-bill.service';
+import { ShareServiceService } from './manage-bill/service/share-service.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-
     BillOverviewComponent,
     BillOverdueUpcomingComponent,
     BillOverdueComponent,
-    BillUpcomingComponent
+    BillUpcomingComponent,
+    AddBillComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,9 @@ import { BillUpcomingComponent } from './manage-bill/bill-overdue-upcoming/bill-
   providers: [
     NotificationService,
     HttpClient,
-    BillOverviewService
+    AddBillService,
+    ShareServiceService
+    
   ],
   bootstrap: [AppComponent]
 })
