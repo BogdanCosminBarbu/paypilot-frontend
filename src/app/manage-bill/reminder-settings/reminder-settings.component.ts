@@ -6,6 +6,7 @@ import { BillDebtService } from '../bill-overview/bill-debt/bill-debt.service';
 import { BillGroceriesService } from '../bill-overview/bill-groceries/bill-groceries.service';
 import { BillInternetService } from '../bill-overview/bill-internet/bill-internet.service';
 import { BillRetirementService } from '../bill-overview/bill-retirement/bill-retirement.service';
+import { ReminderSettings } from '../../notification/model/reminderSettings.model';
 
 @Component({
   selector: 'app-reminder-settings',
@@ -16,6 +17,7 @@ export class ReminderSettingsComponent implements OnInit{
   bill !:Bill;
   bills !:Bill[];
   billCategory!: string;
+  reminderSettings !: ReminderSettings;
   constructor(
     private billCellphoneService: BillCellphoneService,
     private billRentService:BillRentService,
@@ -29,7 +31,7 @@ export class ReminderSettingsComponent implements OnInit{
 
   }
 
-  public loadBills(){
+  loadBills(){
     if(this.billCategory ==='HOUSE_RENT'){
       this.billRentService.getAll().subscribe(
         data => this.bills = data 
@@ -55,5 +57,9 @@ export class ReminderSettingsComponent implements OnInit{
         data => this.bills = data 
       )
     }
+  }
+
+  saveSettings(){
+    
   }
 }

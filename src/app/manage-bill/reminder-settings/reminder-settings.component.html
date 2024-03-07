@@ -4,7 +4,7 @@
         <form>
             <div class="form-field">
                 <label for="bill-category">Bill Category</label>
-                <select id="bill-category" name="bill-category" [(ngModel)]="billCategory" onchange="loadBills()" required>
+                <select id="bill-category" name="bill-category" [(ngModel)]="billCategory" (change)="loadBills()" required>
                     <option value="HOUSE_RENT">HOUSE_RENT</option>
                     <option value="GROCERIES">GROCERIES</option>
                     <option value="DEBT_PAYMENTS">DEBT_PAYMENTS</option>
@@ -23,7 +23,7 @@
             <hr>
             <div class="form-field">
                 <label for="reminder-frequency">Reminder Frequency</label>
-                <select id="reminder-frequency" name="reminder-frequency" required>
+                <select id="reminder-frequency" name="reminder-frequency" required [(ngModel)]="reminderSettings.reminderFrequency">
                     <option value="DAILY">DAILY</option>
                     <option value="WEEKLY">WEEKLY</option>
                     <option value="BIMONTHLY">BIMONTHLY</option>
@@ -32,21 +32,20 @@
             </div>
             <div class="form-field">
                 <label for="reminder-date">Reminder Starting Date</label>
-                <input type="date" id="reminder-date" name="reminder-date" required>
+                <input type="date" id="reminder-date" name="reminder-date" required [(ngModel)]="reminderSettings.reminderStartDate">
             </div>
             <div class="form-field">
                 <label for="message">Message Customization</label>
-                <input type="text" id="message" name="message" placeholder="Bill payment due" required>
+                <input type="text" id="message" name="message" placeholder="Bill payment due" required [(ngModel)]="reminderSettings.message">
             </div>
             <div class="form-field">
                 <label for="notifications-preferences">Notification Preeferences</label>
                 <select id="notifications-preferences" name="notifications-preferences" required>
-                    <option value="EMAIL">EMAIL</option>
-                    <option value="SMS">SMS</option>
+                    <option value="EMAIL">In App</option>
                 </select>
             </div>
             <div class="form-actions">
-                <button type="submit" class="save">Save</button>
+                <button type="submit" class="save" (click)="saveSettings()">Save</button>
                 <button type="button" class="cancel">Cancel</button>
             </div>
         </form>
