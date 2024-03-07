@@ -8,7 +8,7 @@ import { Bill } from '../../model/bill.model';
   providedIn: 'root'
 })
 export class BillGroceriesService {
-  private url: string = "http://localhost:8082/bill/groceriesBills";
+  private url: string = "http://localhost:8082/groceriesBills";
 
   constructor(private httpClient: HttpClient) {}
 

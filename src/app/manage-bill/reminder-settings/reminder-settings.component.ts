@@ -6,6 +6,8 @@ import { BillDebtService } from '../bill-overview/bill-debt/bill-debt.service';
 import { BillGroceriesService } from '../bill-overview/bill-groceries/bill-groceries.service';
 import { BillInternetService } from '../bill-overview/bill-internet/bill-internet.service';
 import { BillRetirementService } from '../bill-overview/bill-retirement/bill-retirement.service';
+import { ReminderSettings } from '../../notification/model/reminderSettings.model';
+import { AddBillService } from '../service/add-bill.service';
 
 @Component({
   selector: 'app-reminder-settings',
@@ -16,6 +18,7 @@ export class ReminderSettingsComponent implements OnInit{
   bill !:Bill;
   bills !:Bill[];
   billCategory!: string;
+  reminderSettings !: ReminderSettings;
   constructor(
     private billCellphoneService: BillCellphoneService,
     private billRentService:BillRentService,
@@ -23,7 +26,11 @@ export class ReminderSettingsComponent implements OnInit{
     private billGroceriesService: BillGroceriesService,
     private billInternetService: BillInternetService,
     private billRetirementService : BillRetirementService,
-    ){}
+    private addBillService:AddBillService,
+    ){
+      this.bill = new Bill();
+      this.reminderSettings = new ReminderSettings();
+    }
 
   ngOnInit(){
 
@@ -55,5 +62,17 @@ export class ReminderSettingsComponent implements OnInit{
         data => this.bills = data 
       )
     }
+  }
+
+  saveSettings(){
+    this.reminderSettings.active = true;
+    this.bill.reminderSettings = new ReminderSettings();
+    this.bill.reminderSettings.active = this.reminderSettings.active;
+    this.bill.reminderSettings.message = this.reminderSettings.message;
+    this.bill.reminderSettings.reminderFrequency = this.reminderSettings.reminderFrequency;
+    this.bill.reminderSettings.reminderStartDate = this.reminderSettings.reminderStartDate;
+    this.addBillService.updateBill(this.bills[0],this.bills[0].billId).subscribe(data =>{
+      console.log("Bill updated");
+    })
   }
 }
