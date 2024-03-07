@@ -15,7 +15,7 @@
             </div>
             <div class="form-field">
                 <label for="bill-category">Bill Name:</label>
-                <select id="bill-category" name="bill-name" [(ngModel)]="bill">
+                <select id="bill-select" name="bill-select" [(ngModel)]="bill">
                   <option >Select</option>
                   <option *ngFor="let bill of bills" [value]="bill">{{ bill.billName }}</option>
                 </select>
