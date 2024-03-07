@@ -1,0 +1,182 @@
+.billsFilter,.billsDisplay {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.billsFilter .form-group {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+.payment-scheduler {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .square-container {
+    border: 2px solid #7a5252; 
+    padding: 20px;
+    width: 150px; 
+    height: 50px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+  
+.success-message {
+  color: #fff;
+  background-color: #28a745;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* Table design CSS*/
+table {
+  width: 100%; 
+  border-collapse: collapse; 
+  table-layout: fixed; 
+}
+
+th {
+  background-color: #f2f2f2; 
+  text-align: left; 
+  padding: 10px; 
+}
+
+td {
+  padding: 10px; 
+  border-bottom: 1px solid #ddd; 
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Schedule Creation CSS */
+.schedule-creation form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  max-width: 800px; 
+  margin: auto; 
+}
+
+.schedule-creation form .form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-creation form .form-field {
+  margin-bottom: 10px; 
+}
+
+.schedule-creation form input,
+.schedule-creation form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.schedule-creation form .full-width {
+  grid-column: 2 / -1; 
+}
+
+.schedule-creation form .square-container {
+  grid-column: 2 / -1; 
+}
+
+/* Button styles */
+.schedule-creation form button {
+  grid-column: 1 / -1; 
+  padding: 10px 20px;
+  margin-top: 20px; 
+  background-color: #0044cc; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-field input[readonly] {
+  background-color: #f3f3f3; 
+  color: #333; 
+}
+
+
+/* Schedules table CSS */
+.schedule-table {
+  width: 100%; 
+  text-align: left; 
+  margin-bottom: 20px; 
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 10px; 
+}
+
+.schedule-table th {
+  background-color: #f4f4f4; 
+}
+
+.buttons-container {
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 10px; 
+}
+
+/* Modify page CSS */
+.date-form {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
+
+.date-input-group {
+  display: flex;
+  flex-direction: column; 
+  margin-right: 20px; 
+}
+
+.date-input-group label {
+  margin-bottom: 5px; 
+  text-align: center; 
+}
+
+button {
+  background-color: #0062cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004085;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
+}

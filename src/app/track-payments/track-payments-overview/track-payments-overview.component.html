@@ -1,0 +1,37 @@
+<div class="payment-scheduler">
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="billCategory">Bill Category</label>
+        <select id="billCategory" formControlName="billCategory" required>
+          <option value="ALL">All</option>
+          <option value="DEBT_PAYMENTS">Debt Payments</option>
+          <option value="HOUSE_RENT">House Rent</option>
+          <option value="GROCERIES">Groceries</option>
+          <option value="INTERNET_CHARGES">Internet Charges</option>
+          <option value="RETIREMENT_CHARGES">Retirement Charges</option>
+          <option value="CELL_PHONE_CHARGES">Cell Phone Charges</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dateFrom">Date From:</label>
+        <input type="date" id="dateFrom" formControlName="dateFrom" required>
+      </div>
+      <div class="form-group">
+        <label for="dateTo">Date To:</label>
+        <input type="date" id="dateTo" formControlName="dateTo" required>
+      </div>
+      <button type="button" (click)="fetchBills()">Search</button>
+    </form>
+
+    <div *ngIf="bills.length > 0" class="bills-container">
+      <form>
+        <div class="row" *ngFor="let bill of bills; let i = index">
+          <label>
+            <span>{{bill.amount}} - {{ bill.name }} - {{ bill.due_date }}</span>
+          </label>
+        </div>
+      </form>
+    </div>
+    
+</div>
+<button (click)="goBack()">Go Back</button>

@@ -30,8 +30,8 @@ export class ReminderSettingsComponent implements OnInit{
   ngOnInit(){
 
   }
-
-  loadBills(){
+  
+  loadBills() {
     if(this.billCategory ==='HOUSE_RENT'){
       this.billRentService.getAll().subscribe(
         data => this.bills = data 

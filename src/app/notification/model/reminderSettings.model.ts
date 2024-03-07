@@ -6,7 +6,6 @@ export class ReminderSettings {
     message: string;
     notificationByEmail: boolean;
     notificationInApp: boolean;
- 
     constructor(id: number, active: boolean, reminderFrequency: string, reminderStartDate: Date, message: string,notificationByEmail: boolean, notificationInApp: boolean){
         this.id = id;
         this.active = active;
@@ -16,5 +15,4 @@ export class ReminderSettings {
         this.notificationByEmail = notificationByEmail;
         this.notificationInApp = notificationInApp;
     }
- 
 }
